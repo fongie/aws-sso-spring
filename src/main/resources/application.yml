@@ -1,0 +1,14 @@
+spring:
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          aws:
+            signing.credentials:
+                - private-key-location: classpath:credentials/key.pem
+                  certificate-location: classpath:credentials/cert.pem
+            identityprovider:
+              metadata-uri: ${METADATA_URI}
+
+logging.level:
+  org.springframework.security: TRACE
